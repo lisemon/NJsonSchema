@@ -25,6 +25,7 @@ namespace NJsonSchema.CodeGeneration.CSharp
                 if (jsonConverterTypes != null && jsonConverterTypes.Any())
                     return ", new Newtonsoft.Json.JsonSerializerSettings { " +
                            "PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All, " +
+                           "DateParseHandling = DateParseHandling.DateTimeOffset, " +
                            "Converters = " + GenerateConverters(jsonConverterTypes) +
                            " }";
                 else

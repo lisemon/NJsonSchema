@@ -96,6 +96,7 @@ if(Model.GenerateJsonInheritanceConverterClass){
                     "CanConvert(System.Type objectType)\r\n    {\r\n        return true;\r\n    }\r\n\r\n    pu" +
                     "blic override object ReadJson(Newtonsoft.Json.JsonReader reader, System.Type obj" +
                     "ectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer)\r\n    {" +
+                    "\r\n        reader.DateParseHandling = Newtonsoft.Json.DateParseHandling.DateTimeOffset;" +
                     "\r\n        var jObject = serializer.Deserialize<Newtonsoft.Json.Linq.JObject>(rea" +
                     "der);\r\n        if (jObject == null)\r\n            return null;\r\n\r\n        var dis" +
                     "criminator = Newtonsoft.Json.Linq.Extensions.Value<string>(jObject.GetValue(_dis" +
